@@ -1,0 +1,23 @@
+Week 1 - Build Security Lab
+1 n Deploy Windows Server AD DONE
+2 n Deploy Windows 11 workstation DONE
+3 n Deploy Kali Linux VM --- USED PARROT INSTEAD
+4 n Deploy Ubuntu VM --- DONE
+5 n Install Sysmon
+
+Week 2 - Vulnerability Management
+1 n Install Nessus Essentials
+2 n Perform authenticated scans
+3 n Prioritize findings
+4 n Remediate vulnerabilities
+5 n Create vulnerability assessment report
+
+Week 3 - Monitoring & Incident Response
+1 n Deploy Sentinel or Wazuh
+2 n Generate failed logins
+3 n Generate PowerShell activity
+4 n Investigate alerts
+5 n Write incident response report
+
+
+
