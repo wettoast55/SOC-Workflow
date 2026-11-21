@@ -3,7 +3,23 @@ Week 1 - Build Security Lab
 2 n Deploy Windows 11 workstation DONE
 3 n Deploy Kali Linux VM --- USED PARROT INSTEAD
 4 n Deploy Ubuntu VM --- DONE
-5 n Install Sysmon
+5 n Install Sysmon --- DONE
+
+DC01
+├─ Domain Controller
+├─ DNS
+└─ Active Directory
+
+WIN01
+└─ Domain Joined
+
+WIN02
+└─ Domain Joined
+
+PARROT01
+└─ Standalone
+
+.......
 
 Week 2 - Vulnerability Management
 1 n Install Nessus Essentials
