@@ -33,14 +33,12 @@ Powershell: Get-NetFirewallRule -DisplayGroup "Remote Scheduled Tasks Management
     Select-Object Name, Enabled
 or 
 pr Get-WmiObject -Class Win32_ComputerSystem -ComputerName REMOTE-PC-NAME
+gpresult /r -shows user gpo changes (none)
+gpresult /scope computer /r -shows device gpo changes (yes)
 4. created more gpos for future... hardening and automated installations
 
 testing auditing
 entered bad passworld sevreal times on win01 as winuser1
 
+good on local devices..
 
-1 n Install Nessus Essentials
-2 n Perform authenticated scans
-3 n Prioritize findings
-4 n Remediate vulnerabilities
-5 n Create vulnerability assessment report
