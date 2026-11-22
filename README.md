@@ -103,3 +103,14 @@ Verify:PowerShell
 Get-Service *sysmon*
 
 deployed on dc01, win01, win02
+
+part 1 done... status:
+-Proxmox isolated security network (secure0)
+ -secure.local Active Directory domain
+ -DC01 Domain Controller
+ -WIN01 joined to domain
+ -WIN02 joined to domain
+ -Parrot attack box
+ -Sysmon deployed on endpoints
+
+-----------------------------------------

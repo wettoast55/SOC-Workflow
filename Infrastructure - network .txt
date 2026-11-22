@@ -28,6 +28,8 @@ Week 2 - Vulnerability Management
 4 n Remediate vulnerabilities
 5 n Create vulnerability assessment report
 
+
+
 Week 3 - Monitoring & Incident Response
 1 n Deploy Sentinel or Wazuh
 2 n Generate failed logins
