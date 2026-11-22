@@ -114,3 +114,5 @@ part 1 done... status:
  -Sysmon deployed on endpoints
 
 -----------------------------------------
+
+az monitor data-collection rule association list-by-resource \ --resource "/subscriptions/db1c89b8-14c9-4696-b846-7254453e3334/resourceGroups/CyberLab/providers/Microsoft.HybridCompute/machines/DC01"
