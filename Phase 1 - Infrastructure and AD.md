@@ -28,6 +28,9 @@ Windows Server 2022 (DC01: 192.168.100.100)
 Scanner/Attacker:
 ParrotOS (Parrot01: 192.168.100.10)
 ```
+| PVE VM Setup | VLAN Setup |
+|----------|---------|
+| <img width="700" height="350" alt="VMs Setup" src="https://github.com/user-attachments/assets/231eaa9f-f799-4b34-a198-9c193533f57f" /> | <img width="800" height="600" alt="VM vlan setup" src="https://github.com/user-attachments/assets/0f09bbfd-3f3e-42f0-b795-67ff970cc105" /> |
 
 # Step 2 - Create domain + Install Active Directory Domain Services
 On DC01, initialized the domain secure.local using Server Manager. Verifying it's creation within Powershell before beginning setup of ADDS
@@ -69,6 +72,10 @@ nessus
 winuser1
 winuser2
 ```
+
+| Domain Setup | Groups |
+|----------|---------|
+| <img width="1600" height="1200" alt="domain set up and creating ous" src="https://github.com/user-attachments/assets/05bdc61e-f1a8-4006-a35d-d25d4bf471a9" /> | <img width="1600" height="1200" alt="users setup and admin group in domain" src="https://github.com/user-attachments/assets/77a4f1ed-1ba8-4f86-9327-36a0ed17791d" /> |
 
 # Step 4 - Join Endpoints To Domain and Install Sysmon
 
