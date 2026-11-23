@@ -1,5 +1,5 @@
 # Use of Playbooks, Runbooks, and Specialized Queries
-Automation would greatly help reduce analyst workload and improve detection/response times. We will create some example KQL queries to detect common IOCs listed below, map out a general investigation process for that particular flagged event, and potential containment actions. With that, playbooks and runbooks go hand in hand, complementing one another to ensure all areas of the investigative process is covered.
+Automation would greatly help reduce analyst workload and improve detection/response times. We will create some example KQL queries to detect common IOCs listed below, map out a general investigation process for that particular flagged event, and potential containment actions. With that, playbooks and runbooks go hand in hand, complementing one another to ensure all areas of the investigative process is covered. We can implement external resources such as threat feeds and public databases such as AbuseIPDB to flag potentially malicious IoC telemetry, further streamlining the response process.
 
 ## (Potentially) Automated Responses
 Example common IOCs include:
