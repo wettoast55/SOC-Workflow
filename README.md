@@ -1,116 +1,57 @@
-# SOC-Workflow
-...
-Using Proxmox host, initiated OSs on separate VMs
-ParrotOS
-Linux Workstation - Fedora
-Windows Workstation - Windows 10 Pro
-Windows Server - Windows Server 2022
+# Enterprise SOC/Vulnerability Management
+
+## Summary
+
+This project reviews the design, deployment, and operation process of a scaled-down enterprise-style cybersecurity lab built to simulate real-world Security Operations Center processes.
+
+The objective was to create an environment capable of supporting security investigations, assessments, logging, and threat monitoring activities comparable to an early-career SOC Analyst's duties. The intent was to further my experience with:
+
+- Microsoft Sentinel and Azure Arc
+- Active Directory Administration
+- Group Policy Management
+- Nessus Essentials
+- Incident Response Methodology
 
 
--------------------
-VM 1 - Domain Controller
+# Environment Overview
 
-Windows Server 2022
+## Infrastructure
 
-Hostname: DC01 -----
-Roles:
-Active Directory
-DNS
-DHCP (optional)
-VM 2 - Workstation
+### Hypervisor
 
-Windows 11
+- Self-hosted Proxmox VE
 
-Hostname: HR-PC01
-Join domain
-VM 3 - Workstation
+### Network
 
-Windows 11
+```text
+Network: 192.168.100.0/24
+Bridge: secure0 (separate bridge from homelab)
+```
 
-Hostname: ENG-PC01
-Join domain
-VM 4 - Attacker Machine
+### Assets used
 
-Kali Linux
----------------------
-1. initialized all vms
-2. segmented network
-2. renamed devices accordingly
-3. created domain and enabled roles on dc ... 
-4. segmented network and addded all devices to new secure0 vlan 192.168.100.1/24 vs 192.168.50.1
-5.configure dstatuc addresses on all...
-192.168.100.100
-255.255.255.0
- 
-Gateway: blank
-DNS: 192.168.100.100
-WIN01
-Plain Text
-192.168.100.30
-255.255.255.0
- 
-Gateway: blank
-DNS: 192.168.100.100
-WIN02
-Plain Text
-192.168.100.31
-255.255.255.0
- 
-Gateway: blank
-DNS: 192.168.100.100
-PARROT
-Plain Text
-192.168.100.10
-255.255.255.0
- 
-Gateway: blank
-DNS: 192.168.100.100
+| Host | Role | IP |
+|--------|--------|--------|
+| DC01 | Domain Controller | 192.168.100.100 |
+| WIN01 | Domain Workstation | 192.168.100.30 |
+| WIN02 | Domain Workstation | 192.168.100.31 |
+| PARROT01 | Security Testing VM | 192.168.100.10 |
 
---------------
-DC01         192.168.100.100
-WIN01        192.168.100.30
-WIN02        192.168.100.31
-PARROT01     192.168.100.10
+---
 
-Domain:
-secure.local
+# Phase 1: Network "Infrastructure" Deployment
 
-created domain on dc01
-verified it
-Get-ADDomain
+## Objective
 
-created ou, users, admin
----------------
-4. workstations joined domain
+Build an enterprise Active Directory environment and isolate systems inside a secure lab network. 
 
-5. installed sysmon on dc and clients
-temp enabled second nic to normal network on dc
-Then Install Sysmon on DC01
+---
 
-Download Sysmon from Microsoft Sysinternals.
+## Network Segmentation
 
-Create:C:\Tools\Sysmon
+A dedicated security subnet was created on the Proxmox host where I run personal home-services. The isolated testing environment allows safe deployment of (less) than secure tools/packages from the internet. This segmentation also nicely mimics enterprise styled architecture and allows scaling in future projects. 
 
-Sysmon64.exe
-sysmonconfig-export.xml (SwiftOnSecurity config)
-
-Then install: PowerShell
-cd C:\Tools\Sysmon
- 
-.\Sysmon64.exe -accepteula -i sysmonconfig-export.xml
-
-Verify:PowerShell
-Get-Service *sysmon*
-
-deployed on dc01, win01, win02
-
-part 1 done... status:
--Proxmox isolated security network (secure0)
- -secure.local Active Directory domain
- -DC01 Domain Controller
- -WIN01 joined to domain
- -WIN02 joined to domain
- -Parrot attack box
- -Sysmon deployed on endpoints
-
------------------------------------------
+```text
+secure0
+192.168.100.0/24
+```
