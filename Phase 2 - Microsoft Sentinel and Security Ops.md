@@ -30,11 +30,11 @@ Enable-NetFirewallRule -DisplayGroup "Remote Event Log Management"
 Enable-NetFirewallRule -DisplayGroup "Windows Management Instrumentation (WMI)"
 ```
 
-## Step 3 - Verify rules creation and show detailed GPO information, create more GPOs specifically fo future hardening/automation
+## Step 3 - Verify rules creation and show detailed GPO information, create more GPOs specifically for future hardening/automation (Note: gpresult without /scope runs the command as the user instead of the machine, no user groups have any auditing policies set yet so it will not show any changes.
 ```cmd
 pr Get-WmiObject -Class Win32_ComputerSystem -ComputerName REMOTE-PC-NAME
-gpresult /r -shows user gpo changes (none)
-gpresult /scope computer /r -shows device gpo changes (yes)
+gpresult /scope computer /r
+gpresult /r
 ```
 
 #Final verification for auditing logs 
