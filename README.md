@@ -11,8 +11,7 @@ Primary Objectives:
 - Collect and investigate Windows Security Events.
 - Perform authenticated vulnerability assessments.
 - Report findings in line with proper threat detection, incident response, and vulnerability management methodologies.
-
----
+<img width="1365" height="866" alt="sentinel main dash" src="https://github.com/user-attachments/assets/ecded122-d861-4ed1-a6dc-90cc2c84cc01" />
 
 ## Environment Overview
 
