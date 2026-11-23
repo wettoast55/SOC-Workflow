@@ -124,4 +124,4 @@ Validated visibility through Log Analytics.
 
 # Outcome
 
-Successfully implemented centralized security monitoring using Microsoft Sentinel with Azure Arc integration and validated end-to-end log ingestion from Active Directory infrastructure.
+Successfully implemented centralized security monitoring using Microsoft Sentinel with Azure Arc and validated end-to-end log ingestion from Active Directory infrastructure.
